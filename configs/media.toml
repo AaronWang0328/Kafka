@@ -1,0 +1,18 @@
+# down_pic 原始指令协议；Topic 名取自原始消费留档。
+# 仅解析/留档，不执行任何抓图或录像操作。
+[kafka]
+bootstrap_servers = "127.0.0.1:9092"
+topic = "down_pic"
+group_id = "down-pic-ingest-v1"
+security_protocol = "PLAINTEXT"
+auto_offset_reset = "earliest"
+
+[storage]
+database = "var/down_pic.sqlite3"
+
+[input]
+profile = "ct_down_pic"
+
+[processing]
+batch_size = 2048
+batch_max_wait_ms = 50

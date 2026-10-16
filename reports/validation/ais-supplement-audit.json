@@ -1,0 +1,487 @@
+{
+  "archive_sha256": "dca43733b51b25b9a1ccd3d5fe9380ec0f758edd3dee39a768de8bf8a3b74b29",
+  "rows": 268615,
+  "invalid_json_lines": [],
+  "topics": {
+    "ais_parsing_ori": {
+      "rows": 232698,
+      "distinct_mmsi": 248,
+      "recv_range": [
+        "2026-10-15T16:25:20.873+08:00",
+        "2026-10-15T16:49:59.746+08:00"
+      ],
+      "last_updated_range": [
+        "2026-10-15T16:18:05.324+08:00",
+        "2026-10-15T16:49:58.936+08:00"
+      ],
+      "recv_minus_last_updated_seconds": {
+        "min": 0.437,
+        "p50": 31.248,
+        "p95": 322.885,
+        "p99": 498.67,
+        "max": 600.508
+      },
+      "receive_interval_per_vessel_seconds": {
+        "min": 0.447,
+        "p50": 1.214,
+        "p95": 1.609,
+        "p99": 1.912,
+        "max": 1002.203
+      },
+      "out_of_bridge_bounds": 0,
+      "bad_mmsi": 1184,
+      "unique_mmsi_last_updated": 8988,
+      "repeated_same_mmsi_last_updated_rows": 223710,
+      "unique_timestamp_navigation_dimensions": 8988,
+      "fields": {
+        "lon": {
+          "missing_or_null": 0,
+          "zero": 0,
+          "distinct_values": 5052,
+          "numeric_min": 119.930332,
+          "numeric_max": 120.009987
+        },
+        "lat": {
+          "missing_or_null": 0,
+          "zero": 0,
+          "distinct_values": 5270,
+          "numeric_min": 31.980033,
+          "numeric_max": 32.039973
+        },
+        "speed": {
+          "missing_or_null": 0,
+          "zero": 86682,
+          "distinct_values": 115,
+          "numeric_min": 0.0,
+          "numeric_max": 11.7
+        },
+        "course": {
+          "missing_or_null": 0,
+          "zero": 22251,
+          "distinct_values": 1336,
+          "numeric_min": 0.0,
+          "numeric_max": 360.0,
+          "special_values": {
+            "360.0": 2971
+          }
+        },
+        "heading": {
+          "missing_or_null": 0,
+          "zero": 19635,
+          "distinct_values": 237,
+          "numeric_min": 0,
+          "numeric_max": 511,
+          "special_values": {
+            "511": 148903,
+            "456": 1184,
+            "480": 4387
+          }
+        },
+        "ship_length": {
+          "missing_or_null": 0,
+          "zero": 1197,
+          "distinct_values": 87,
+          "numeric_min": 0,
+          "numeric_max": 292
+        },
+        "ship_width": {
+          "missing_or_null": 0,
+          "zero": 1197,
+          "distinct_values": 28,
+          "numeric_min": 0,
+          "numeric_max": 102
+        },
+        "last_updated": {
+          "missing_or_null": 0,
+          "zero": 0,
+          "distinct_values": 8988,
+          "numeric_min": 1792052285.323643,
+          "numeric_max": 1792054198.935991
+        }
+      },
+      "observed_average_rows_per_second": 157.34819690399377
+    },
+    "REALTIME_TOPIC": {
+      "rows": 35917,
+      "distinct_mmsi": 197,
+      "recv_range": [
+        "2026-10-15T16:25:24.587+08:00",
+        "2026-10-15T16:49:59.116+08:00"
+      ],
+      "last_updated_range": [
+        "2026-10-15T16:25:21.781+08:00",
+        "2026-10-15T16:49:57.149+08:00"
+      ],
+      "recv_minus_last_updated_seconds": {
+        "min": 1.343,
+        "p50": 1.898,
+        "p95": 2.318,
+        "p99": 2.704,
+        "max": 2.806
+      },
+      "receive_interval_per_vessel_seconds": {
+        "min": 4.251,
+        "p50": 4.997,
+        "p95": 5.317,
+        "p99": 5.608,
+        "max": 1104.973
+      },
+      "out_of_bridge_bounds": 0,
+      "bad_mmsi": 52,
+      "unique_mmsi_last_updated": 35917,
+      "repeated_same_mmsi_last_updated_rows": 0,
+      "unique_timestamp_navigation_dimensions": 35917,
+      "fields": {
+        "lon": {
+          "missing_or_null": 0,
+          "zero": 0,
+          "distinct_values": 801,
+          "numeric_min": 119.93,
+          "numeric_max": 120.01
+        },
+        "lat": {
+          "missing_or_null": 0,
+          "zero": 0,
+          "distinct_values": 601,
+          "numeric_min": 31.98,
+          "numeric_max": 32.04
+        },
+        "speed": {
+          "missing_or_null": 0,
+          "zero": 0,
+          "distinct_values": 114,
+          "numeric_min": 0.1,
+          "numeric_max": 11.7
+        },
+        "course": {
+          "missing_or_null": 0,
+          "zero": 1224,
+          "distinct_values": 1171,
+          "numeric_min": 0.0,
+          "numeric_max": 360.0,
+          "special_values": {
+            "360.0": 365
+          }
+        },
+        "heading": {
+          "missing_or_null": 35917,
+          "zero": 0,
+          "distinct_values": 1,
+          "numeric_min": null,
+          "numeric_max": null,
+          "special_values": {
+            "None": 35917
+          }
+        },
+        "ship_length": {
+          "missing_or_null": 0,
+          "zero": 0,
+          "distinct_values": 77,
+          "numeric_min": 10.0,
+          "numeric_max": 292.0
+        },
+        "ship_width": {
+          "missing_or_null": 0,
+          "zero": 0,
+          "distinct_values": 24,
+          "numeric_min": 3.0,
+          "numeric_max": 102.0
+        },
+        "last_updated": {
+          "missing_or_null": 0,
+          "zero": 0,
+          "distinct_values": 296,
+          "numeric_min": 1792052721781,
+          "numeric_max": 1792054197149
+        }
+      },
+      "observed_average_rows_per_second": 24.358286612199556
+    }
+  },
+  "time_interpretation": "recv has no explicit timezone; +08:00 used for audit to match provided China local window; source time semantics require confirmation",
+  "total_distinct_mmsi": 249,
+  "overlap_mmsi_between_topics": 196,
+  "csv": {
+    "rows": 11388,
+    "distinct_mmsi": 8,
+    "rows_per_mmsi": {
+      "413853781": 1477,
+      "413771166": 1205,
+      "413797104": 1364,
+      "413796504": 1480,
+      "413955497": 1480,
+      "413794198": 1457,
+      "413287380": 1471,
+      "413827525": 1454
+    },
+    "mmsi_missing_in_bridge_jsonl": [],
+    "outside_bridge_bounds": 146,
+    "topics": {
+      "ais_parsing_ori": 9296,
+      "REALTIME_TOPIC": 2092
+    },
+    "recv_range": [
+      "2026-10-15 16:25:20.873",
+      "2026-10-15 16:49:59.746"
+    ],
+    "has_source_timestamp": false,
+    "overlap_with_jsonl": {
+      "rows_also_in_bridge_jsonl": 11242,
+      "rows_absent_from_bridge_jsonl": 146,
+      "absent_rows_all_outside_bridge_bounds": true,
+      "comparison_fields": [
+        "mmsi",
+        "recv",
+        "topic",
+        "lon",
+        "lat",
+        "speed",
+        "course",
+        "ship_length",
+        "ship_width"
+      ]
+    }
+  },
+  "alarm_identity": {
+    "delivery_rows": 5,
+    "raw_rows": 5,
+    "unique_mmsi": 8,
+    "shared_mmsi": [
+      "413794198",
+      "413827525"
+    ],
+    "shared_events": [
+      {
+        "event_id": "413827525_20261015T162907_stop",
+        "mmsi": "413827525",
+        "warn_time": "2026-10-15T16:29:07.273+08:00",
+        "different_common_fields": []
+      },
+      {
+        "event_id": "413794198_20261015T163507_stop",
+        "mmsi": "413794198",
+        "warn_time": "2026-10-15T16:35:07.416+08:00",
+        "different_common_fields": []
+      }
+    ]
+  },
+  "alarm_alignment": [
+    {
+      "event_id": "413771166_20261015T162822_overspeed",
+      "mmsi": "413771166",
+      "warn_time": "2026-10-15T16:28:22.135+08:00",
+      "nearest_bridge_records": {
+        "ais_parsing_ori": {
+          "closest_recv_minus_alarm_seconds": 0.217,
+          "source_age_at_recv_seconds": 522.624
+        },
+        "REALTIME_TOPIC": {
+          "closest_recv_minus_alarm_seconds": 2.704,
+          "source_age_at_recv_seconds": 2.704
+        }
+      }
+    },
+    {
+      "event_id": "413827525_20261015T162907_stop",
+      "mmsi": "413827525",
+      "warn_time": "2026-10-15T16:29:07.273+08:00",
+      "nearest_bridge_records": {
+        "ais_parsing_ori": {
+          "closest_recv_minus_alarm_seconds": 0.747,
+          "source_age_at_recv_seconds": 16.986
+        },
+        "REALTIME_TOPIC": {
+          "closest_recv_minus_alarm_seconds": 2.048,
+          "source_age_at_recv_seconds": 2.048
+        }
+      }
+    },
+    {
+      "event_id": "413797104_20261015T163127_offset",
+      "mmsi": "413797104",
+      "warn_time": "2026-10-15T16:31:27.348+08:00",
+      "nearest_bridge_records": {
+        "ais_parsing_ori": {
+          "closest_recv_minus_alarm_seconds": 0.35,
+          "source_age_at_recv_seconds": 450.819
+        },
+        "REALTIME_TOPIC": {
+          "closest_recv_minus_alarm_seconds": 1.899,
+          "source_age_at_recv_seconds": 1.899
+        }
+      }
+    },
+    {
+      "event_id": "413853781_20261015T163427_reverse",
+      "mmsi": "413853781",
+      "warn_time": "2026-10-15T16:34:27.418+08:00",
+      "nearest_bridge_records": {
+        "ais_parsing_ori": {
+          "closest_recv_minus_alarm_seconds": -0.241,
+          "source_age_at_recv_seconds": 381.098
+        },
+        "REALTIME_TOPIC": {
+          "closest_recv_minus_alarm_seconds": 1.877,
+          "source_age_at_recv_seconds": 1.877
+        }
+      }
+    },
+    {
+      "event_id": "413794198_20261015T163507_stop",
+      "mmsi": "413794198",
+      "warn_time": "2026-10-15T16:35:07.416+08:00",
+      "nearest_bridge_records": {
+        "ais_parsing_ori": {
+          "closest_recv_minus_alarm_seconds": -0.404,
+          "source_age_at_recv_seconds": 114.069
+        },
+        "REALTIME_TOPIC": {
+          "closest_recv_minus_alarm_seconds": 1.775,
+          "source_age_at_recv_seconds": 1.775
+        }
+      }
+    },
+    {
+      "event_id": "413827525_20261015T162907_stop",
+      "mmsi": "413827525",
+      "warn_time": "2026-10-15T16:29:07.273+08:00",
+      "nearest_bridge_records": {
+        "ais_parsing_ori": {
+          "closest_recv_minus_alarm_seconds": 0.747,
+          "source_age_at_recv_seconds": 16.986
+        },
+        "REALTIME_TOPIC": {
+          "closest_recv_minus_alarm_seconds": 2.048,
+          "source_age_at_recv_seconds": 2.048
+        }
+      }
+    },
+    {
+      "event_id": "413794198_20261015T163507_stop",
+      "mmsi": "413794198",
+      "warn_time": "2026-10-15T16:35:07.416+08:00",
+      "nearest_bridge_records": {
+        "ais_parsing_ori": {
+          "closest_recv_minus_alarm_seconds": -0.404,
+          "source_age_at_recv_seconds": 114.069
+        },
+        "REALTIME_TOPIC": {
+          "closest_recv_minus_alarm_seconds": 1.775,
+          "source_age_at_recv_seconds": 1.775
+        }
+      }
+    },
+    {
+      "event_id": "413287380_20261015T163957_overspeed",
+      "mmsi": "413287380",
+      "warn_time": "2026-10-15T16:39:57.150+08:00",
+      "nearest_bridge_records": {
+        "ais_parsing_ori": {
+          "closest_recv_minus_alarm_seconds": -0.328,
+          "source_age_at_recv_seconds": 2.368
+        },
+        "REALTIME_TOPIC": {
+          "closest_recv_minus_alarm_seconds": 1.975,
+          "source_age_at_recv_seconds": 1.975
+        }
+      }
+    },
+    {
+      "event_id": "413796504_20261015T164212_stop",
+      "mmsi": "413796504",
+      "warn_time": "2026-10-15T16:42:12.573+08:00",
+      "nearest_bridge_records": {
+        "ais_parsing_ori": {
+          "closest_recv_minus_alarm_seconds": -0.355,
+          "source_age_at_recv_seconds": 9.928
+        },
+        "REALTIME_TOPIC": {
+          "closest_recv_minus_alarm_seconds": 1.583,
+          "source_age_at_recv_seconds": 1.583
+        }
+      }
+    },
+    {
+      "event_id": "413955497_20261015T164332_stop",
+      "mmsi": "413955497",
+      "warn_time": "2026-10-15T16:43:32.162+08:00",
+      "nearest_bridge_records": {
+        "ais_parsing_ori": {
+          "closest_recv_minus_alarm_seconds": -0.177,
+          "source_age_at_recv_seconds": 29.564
+        },
+        "REALTIME_TOPIC": {
+          "closest_recv_minus_alarm_seconds": 2.212,
+          "source_age_at_recv_seconds": 2.212
+        }
+      }
+    }
+  ],
+  "identifier_and_name_quality": {
+    "non_9_digit_identifiers": {
+      "ais_parsing_ori": {
+        "34682506": 1184
+      },
+      "REALTIME_TOPIC": {
+        "34682506": 52
+      }
+    },
+    "non_9_digit_examples": {
+      "34682506": {
+        "mmsi": "34682506",
+        "name": "SUQIYU03468-L6-54%",
+        "lon": 119.954232,
+        "lat": 32.005945
+      }
+    },
+    "valid_9_digit_mmsi_per_topic": {
+      "ais_parsing_ori": 247,
+      "REALTIME_TOPIC": 196
+    },
+    "valid_9_digit_mmsi_union": 248,
+    "unknown_or_empty_names": {
+      "ais_parsing_ori": 1765,
+      "REALTIME_TOPIC": 244
+    }
+  },
+  "current_code_compatibility": {
+    "ais_parsing_ori": {
+      "python_default": "reject: requires alarm warnType",
+      "python_standard": "reject: source field mapping needed",
+      "rust_auto_profile_exit_code": 1,
+      "rust_validation": [
+        {
+          "error": "未找到 AIS 业务字段",
+          "line": 1
+        }
+      ]
+    },
+    "REALTIME_TOPIC": {
+      "python_default": "reject: requires alarm warnType",
+      "python_standard": "reject: source field mapping needed",
+      "rust_auto_profile_exit_code": 1,
+      "rust_validation": [
+        {
+          "error": "未找到 AIS 业务字段",
+          "line": 1
+        }
+      ]
+    }
+  },
+  "user_clarifications": {
+    "shared_alarm_events": "E02 and E05 are delivery/raw representations of the same real events, not independent events; 8 distinct alarm MMSI overall",
+    "continuous_ais": "supplement provides bridge-wide records, not limited to 8 alarm vessels",
+    "recording": "one trigger per alarm, approximately 20-second annotated video; continuous display and duration controlled by frontend",
+    "video_time": "filename is segment start system time at second resolution; OSD uses camera clock; use both for calibration; alarm time has millisecond precision"
+  },
+  "interpretation_limits": [
+    "Rows are per-vessel exports with a topic field, not lossless Kafka capture envelopes: original value, partition, offset, key and headers are absent.",
+    "A repeated recv cadence does not imply a fresh AIS source fix; REALTIME_TOPIC platform createDate must not be assumed to be an independent GPS acquisition time.",
+    "Coordinate reference system and moulded depth remain unprovided; bridge crop bounds are not an approved matching quality gate.",
+    "The 8-digit identifier must not be silently padded; special course/heading values and zero dimensions need explicit handling.",
+    "Current Python/Rust site adapters cover the prior three alarm/media protocols; the two new AIS export formats still need adapters and parity tests.",
+    "Earlier throughput reports are for alarm/media protocols and cannot be presented as throughput of this AIS supplement."
+  ],
+  "current_code_compatibility_sample_rows_per_topic": 1,
+  "audit_date_CN": "2026-10-16"
+}

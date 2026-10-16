@@ -1,0 +1,125 @@
+{
+  "result": "PASS",
+  "scope": "two AIS topics; original export examples, invalid MMSI, all 146 CSV extras",
+  "test_cluster": "isolated loopback, destroyed after test",
+  "channels": [
+    {
+      "topic": "ais_parsing_ori",
+      "quality": {
+        "schema_version": "bridge-kafka.quality.v1",
+        "records": 135,
+        "statuses": {
+          "valid": 134,
+          "invalid": 1
+        },
+        "ships": 16,
+        "transport_metadata_records": 135,
+        "ais_events": 134,
+        "media_commands": 0,
+        "known_ais_times": 15,
+        "unknown_ais_times": 119,
+        "unconfirmed_coordinate_system_events": 134,
+        "missing_fields": {
+          "ship_name": 0,
+          "length_m": 1,
+          "width_m": 1,
+          "moulded_depth_m": 134,
+          "longitude": 0,
+          "latitude": 0,
+          "sog_knots": 0,
+          "cog_deg": 0
+        },
+        "issues": {
+          "unconfirmed_coordinate_system": 134,
+          "unknown_length_m": 1,
+          "unknown_width_m": 1,
+          "unavailable_heading": 129,
+          "unconfirmed_position_time": 119
+        },
+        "position_gate_rejections": {},
+        "first_invalid_records": [
+          {
+            "record_id": "v1:ais_parsing_ori:0:15",
+            "topic": "ais_parsing_ori",
+            "partition": 0,
+            "offset": 15,
+            "error": "ct_ais: invalid_mmsi"
+          }
+        ]
+      },
+      "quality_parity": "PASS",
+      "actual_replay_key_parity": "PASS",
+      "records": 135,
+      "statuses": {
+        "valid": 134,
+        "invalid": 1
+      },
+      "ships": 16,
+      "semantic_sha256": "77218198d6da13472ab9876369ebe6607500b1f64d0013af2b0f13ea529970e4",
+      "raw_locations_errors_normalized_snapshots": "PASS",
+      "transport_metadata_parity": "PASS",
+      "transport_semantic_sha256": "2b4576d88d3deb0bc489540ea5fd17d1a6e5142b20519ab10280916635798ba9",
+      "excluded": "received_at differs by execution time; JSON object key order is irrelevant; no numeric tolerance used",
+      "offset_resume": "PASS",
+      "replay_dedup": "PASS"
+    },
+    {
+      "topic": "REALTIME_TOPIC",
+      "quality": {
+        "schema_version": "bridge-kafka.quality.v1",
+        "records": 43,
+        "statuses": {
+          "valid": 42,
+          "invalid": 1
+        },
+        "ships": 16,
+        "transport_metadata_records": 43,
+        "ais_events": 42,
+        "media_commands": 0,
+        "known_ais_times": 0,
+        "unknown_ais_times": 42,
+        "unconfirmed_coordinate_system_events": 42,
+        "missing_fields": {
+          "ship_name": 0,
+          "length_m": 0,
+          "width_m": 0,
+          "moulded_depth_m": 42,
+          "longitude": 0,
+          "latitude": 0,
+          "sog_knots": 0,
+          "cog_deg": 0
+        },
+        "issues": {
+          "unavailable_heading": 42,
+          "unconfirmed_position_time": 42,
+          "unconfirmed_coordinate_system": 42
+        },
+        "position_gate_rejections": {},
+        "first_invalid_records": [
+          {
+            "record_id": "v1:REALTIME_TOPIC:0:15",
+            "topic": "REALTIME_TOPIC",
+            "partition": 0,
+            "offset": 15,
+            "error": "ct_ais: invalid_mmsi"
+          }
+        ]
+      },
+      "quality_parity": "PASS",
+      "actual_replay_key_parity": "PASS",
+      "records": 43,
+      "statuses": {
+        "valid": 42,
+        "invalid": 1
+      },
+      "ships": 16,
+      "semantic_sha256": "eff0c0561c01572cd60089c6d5b8a6d6e6f579d0b22d74757e50b63c364c29b2",
+      "raw_locations_errors_normalized_snapshots": "PASS",
+      "transport_metadata_parity": "PASS",
+      "transport_semantic_sha256": "5cf78f4b13f40b977c4d6e22d46d7522f7af2f5b804ca47ed549de3a7394f432",
+      "excluded": "received_at differs by execution time; JSON object key order is irrelevant; no numeric tolerance used",
+      "offset_resume": "PASS",
+      "replay_dedup": "PASS"
+    }
+  ]
+}

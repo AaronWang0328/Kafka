@@ -1,0 +1,29 @@
+# 第二批现网告警；Topic 名取自原始消费留档。
+[kafka]
+bootstrap_servers = "127.0.0.1:9092"
+topic = "ABNORMAL_TOPIC"
+group_id = "abnormal-ingest-v1"
+security_protocol = "PLAINTEXT"
+auto_offset_reset = "earliest"
+
+[storage]
+database = "var/ABNORMAL_TOPIC.sqlite3"
+
+[input]
+profile = "ct_alarm"
+dimension_unit = "m"
+# 单位未说明，shipSpeed 原值保留在 source.raw_navigation，不填入 sog_knots。
+speed_unit = "unknown"
+course_unit = "degrees"
+# shipAngle 的度数已知，但是否对地航向待确认。
+alarm_angle_is_cog = false
+# 已知经纬度为十进制度，坐标基准待对方确认。
+coordinate_system = "unknown"
+
+[quality]
+max_position_age_seconds = 0
+max_future_skew_seconds = 0
+
+[processing]
+batch_size = 2048
+batch_max_wait_ms = 50

@@ -1,0 +1,266 @@
+{
+  "result": "PASS",
+  "fresh_databases": true,
+  "databases_retained": false,
+  "source_code_sha256": "9772cc0a1b289a7612b71e9bdd035c003f0e47c08a7ea8ba59c187708c7e6a13",
+  "scope": "entire supplement JSONL plus non-overlapping CSV extras",
+  "bridge_rows": 268615,
+  "csv_extra_rows": 146,
+  "csv_overlap_excluded": 11242,
+  "channels": [
+    {
+      "topic": "ais_parsing_ori",
+      "quality": {
+        "schema_version": "bridge-kafka.quality.v1",
+        "records": 232817,
+        "statuses": {
+          "valid": 231633,
+          "invalid": 1184
+        },
+        "ships": 247,
+        "transport_metadata_records": 0,
+        "ais_events": 231633,
+        "media_commands": 0,
+        "known_ais_times": 231514,
+        "unknown_ais_times": 119,
+        "unconfirmed_coordinate_system_events": 231633,
+        "missing_fields": {
+          "ship_name": 1765,
+          "length_m": 1197,
+          "width_m": 1197,
+          "moulded_depth_m": 231633,
+          "longitude": 0,
+          "latitude": 0,
+          "sog_knots": 0,
+          "cog_deg": 2971
+        },
+        "issues": {
+          "unconfirmed_coordinate_system": 231633,
+          "unknown_length_m": 1197,
+          "unknown_width_m": 1197,
+          "unavailable_heading": 153409,
+          "unavailable_course": 2971,
+          "unknown_ship_name": 1765,
+          "unconfirmed_position_time": 119
+        },
+        "position_gate_rejections": {},
+        "first_invalid_records": [
+          {
+            "record_id": "v1:offline:ais_parsing_ori.jsonl:5e1af1f22143af8b01e389b808579a4584266c8123f2dfff6b7eea0a8ddfe9ae:0:35",
+            "topic": "offline:ais_parsing_ori.jsonl:5e1af1f22143af8b01e389b808579a4584266c8123f2dfff6b7eea0a8ddfe9ae",
+            "partition": 0,
+            "offset": 35,
+            "error": "ct_ais: invalid_mmsi"
+          },
+          {
+            "record_id": "v1:offline:ais_parsing_ori.jsonl:5e1af1f22143af8b01e389b808579a4584266c8123f2dfff6b7eea0a8ddfe9ae:0:232",
+            "topic": "offline:ais_parsing_ori.jsonl:5e1af1f22143af8b01e389b808579a4584266c8123f2dfff6b7eea0a8ddfe9ae",
+            "partition": 0,
+            "offset": 232,
+            "error": "ct_ais: invalid_mmsi"
+          },
+          {
+            "record_id": "v1:offline:ais_parsing_ori.jsonl:5e1af1f22143af8b01e389b808579a4584266c8123f2dfff6b7eea0a8ddfe9ae:0:428",
+            "topic": "offline:ais_parsing_ori.jsonl:5e1af1f22143af8b01e389b808579a4584266c8123f2dfff6b7eea0a8ddfe9ae",
+            "partition": 0,
+            "offset": 428,
+            "error": "ct_ais: invalid_mmsi"
+          },
+          {
+            "record_id": "v1:offline:ais_parsing_ori.jsonl:5e1af1f22143af8b01e389b808579a4584266c8123f2dfff6b7eea0a8ddfe9ae:0:625",
+            "topic": "offline:ais_parsing_ori.jsonl:5e1af1f22143af8b01e389b808579a4584266c8123f2dfff6b7eea0a8ddfe9ae",
+            "partition": 0,
+            "offset": 625,
+            "error": "ct_ais: invalid_mmsi"
+          },
+          {
+            "record_id": "v1:offline:ais_parsing_ori.jsonl:5e1af1f22143af8b01e389b808579a4584266c8123f2dfff6b7eea0a8ddfe9ae:0:822",
+            "topic": "offline:ais_parsing_ori.jsonl:5e1af1f22143af8b01e389b808579a4584266c8123f2dfff6b7eea0a8ddfe9ae",
+            "partition": 0,
+            "offset": 822,
+            "error": "ct_ais: invalid_mmsi"
+          },
+          {
+            "record_id": "v1:offline:ais_parsing_ori.jsonl:5e1af1f22143af8b01e389b808579a4584266c8123f2dfff6b7eea0a8ddfe9ae:0:1019",
+            "topic": "offline:ais_parsing_ori.jsonl:5e1af1f22143af8b01e389b808579a4584266c8123f2dfff6b7eea0a8ddfe9ae",
+            "partition": 0,
+            "offset": 1019,
+            "error": "ct_ais: invalid_mmsi"
+          },
+          {
+            "record_id": "v1:offline:ais_parsing_ori.jsonl:5e1af1f22143af8b01e389b808579a4584266c8123f2dfff6b7eea0a8ddfe9ae:0:1217",
+            "topic": "offline:ais_parsing_ori.jsonl:5e1af1f22143af8b01e389b808579a4584266c8123f2dfff6b7eea0a8ddfe9ae",
+            "partition": 0,
+            "offset": 1217,
+            "error": "ct_ais: invalid_mmsi"
+          },
+          {
+            "record_id": "v1:offline:ais_parsing_ori.jsonl:5e1af1f22143af8b01e389b808579a4584266c8123f2dfff6b7eea0a8ddfe9ae:0:1416",
+            "topic": "offline:ais_parsing_ori.jsonl:5e1af1f22143af8b01e389b808579a4584266c8123f2dfff6b7eea0a8ddfe9ae",
+            "partition": 0,
+            "offset": 1416,
+            "error": "ct_ais: invalid_mmsi"
+          },
+          {
+            "record_id": "v1:offline:ais_parsing_ori.jsonl:5e1af1f22143af8b01e389b808579a4584266c8123f2dfff6b7eea0a8ddfe9ae:0:1615",
+            "topic": "offline:ais_parsing_ori.jsonl:5e1af1f22143af8b01e389b808579a4584266c8123f2dfff6b7eea0a8ddfe9ae",
+            "partition": 0,
+            "offset": 1615,
+            "error": "ct_ais: invalid_mmsi"
+          },
+          {
+            "record_id": "v1:offline:ais_parsing_ori.jsonl:5e1af1f22143af8b01e389b808579a4584266c8123f2dfff6b7eea0a8ddfe9ae:0:1814",
+            "topic": "offline:ais_parsing_ori.jsonl:5e1af1f22143af8b01e389b808579a4584266c8123f2dfff6b7eea0a8ddfe9ae",
+            "partition": 0,
+            "offset": 1814,
+            "error": "ct_ais: invalid_mmsi"
+          }
+        ]
+      },
+      "quality_parity": "PASS",
+      "reference_business_parity": "PASS",
+      "records": 232817,
+      "statuses": {
+        "valid": 231633,
+        "invalid": 1184
+      },
+      "ships": 247,
+      "semantic_sha256": "f9dbdb2bbaf4e6e8f6f13004ca19e4650b1316ef5ca25300f9018b347fb827a0",
+      "raw_locations_errors_normalized_snapshots": "PASS",
+      "transport_metadata_parity": "PASS",
+      "transport_semantic_sha256": "ff7370ebbca60213213be4206d4a9274fae14d85cfe75bf07dc9e0c369c8f5b5",
+      "excluded": "received_at differs by execution time; JSON object key order is irrelevant; no numeric tolerance used",
+      "full_replay_dedup": "PASS",
+      "databases": {
+        "python": "/tmp/ct-full-real-v1kp714l/ais_parsing_ori.sqlite3",
+        "rust": "/tmp/ct-full-real-v1kp714l/rust/ais_parsing_ori.sqlite3"
+      }
+    },
+    {
+      "topic": "REALTIME_TOPIC",
+      "quality": {
+        "schema_version": "bridge-kafka.quality.v1",
+        "records": 35944,
+        "statuses": {
+          "valid": 35892,
+          "invalid": 52
+        },
+        "ships": 196,
+        "transport_metadata_records": 0,
+        "ais_events": 35892,
+        "media_commands": 0,
+        "known_ais_times": 0,
+        "unknown_ais_times": 35892,
+        "unconfirmed_coordinate_system_events": 35892,
+        "missing_fields": {
+          "ship_name": 244,
+          "length_m": 0,
+          "width_m": 0,
+          "moulded_depth_m": 35892,
+          "longitude": 0,
+          "latitude": 0,
+          "sog_knots": 0,
+          "cog_deg": 365
+        },
+        "issues": {
+          "unavailable_heading": 35892,
+          "unconfirmed_position_time": 35892,
+          "unconfirmed_coordinate_system": 35892,
+          "unavailable_course": 365,
+          "unknown_ship_name": 244
+        },
+        "position_gate_rejections": {},
+        "first_invalid_records": [
+          {
+            "record_id": "v1:offline:REALTIME_TOPIC.jsonl:18f378701619c3002fb8989931b49775d19fb2a54d6668e1492ce4295b98dcdc:0:1735",
+            "topic": "offline:REALTIME_TOPIC.jsonl:18f378701619c3002fb8989931b49775d19fb2a54d6668e1492ce4295b98dcdc",
+            "partition": 0,
+            "offset": 1735,
+            "error": "ct_ais: invalid_mmsi"
+          },
+          {
+            "record_id": "v1:offline:REALTIME_TOPIC.jsonl:18f378701619c3002fb8989931b49775d19fb2a54d6668e1492ce4295b98dcdc:0:1848",
+            "topic": "offline:REALTIME_TOPIC.jsonl:18f378701619c3002fb8989931b49775d19fb2a54d6668e1492ce4295b98dcdc",
+            "partition": 0,
+            "offset": 1848,
+            "error": "ct_ais: invalid_mmsi"
+          },
+          {
+            "record_id": "v1:offline:REALTIME_TOPIC.jsonl:18f378701619c3002fb8989931b49775d19fb2a54d6668e1492ce4295b98dcdc:0:1964",
+            "topic": "offline:REALTIME_TOPIC.jsonl:18f378701619c3002fb8989931b49775d19fb2a54d6668e1492ce4295b98dcdc",
+            "partition": 0,
+            "offset": 1964,
+            "error": "ct_ais: invalid_mmsi"
+          },
+          {
+            "record_id": "v1:offline:REALTIME_TOPIC.jsonl:18f378701619c3002fb8989931b49775d19fb2a54d6668e1492ce4295b98dcdc:0:2077",
+            "topic": "offline:REALTIME_TOPIC.jsonl:18f378701619c3002fb8989931b49775d19fb2a54d6668e1492ce4295b98dcdc",
+            "partition": 0,
+            "offset": 2077,
+            "error": "ct_ais: invalid_mmsi"
+          },
+          {
+            "record_id": "v1:offline:REALTIME_TOPIC.jsonl:18f378701619c3002fb8989931b49775d19fb2a54d6668e1492ce4295b98dcdc:0:2194",
+            "topic": "offline:REALTIME_TOPIC.jsonl:18f378701619c3002fb8989931b49775d19fb2a54d6668e1492ce4295b98dcdc",
+            "partition": 0,
+            "offset": 2194,
+            "error": "ct_ais: invalid_mmsi"
+          },
+          {
+            "record_id": "v1:offline:REALTIME_TOPIC.jsonl:18f378701619c3002fb8989931b49775d19fb2a54d6668e1492ce4295b98dcdc:0:2317",
+            "topic": "offline:REALTIME_TOPIC.jsonl:18f378701619c3002fb8989931b49775d19fb2a54d6668e1492ce4295b98dcdc",
+            "partition": 0,
+            "offset": 2317,
+            "error": "ct_ais: invalid_mmsi"
+          },
+          {
+            "record_id": "v1:offline:REALTIME_TOPIC.jsonl:18f378701619c3002fb8989931b49775d19fb2a54d6668e1492ce4295b98dcdc:0:2440",
+            "topic": "offline:REALTIME_TOPIC.jsonl:18f378701619c3002fb8989931b49775d19fb2a54d6668e1492ce4295b98dcdc",
+            "partition": 0,
+            "offset": 2440,
+            "error": "ct_ais: invalid_mmsi"
+          },
+          {
+            "record_id": "v1:offline:REALTIME_TOPIC.jsonl:18f378701619c3002fb8989931b49775d19fb2a54d6668e1492ce4295b98dcdc:0:2563",
+            "topic": "offline:REALTIME_TOPIC.jsonl:18f378701619c3002fb8989931b49775d19fb2a54d6668e1492ce4295b98dcdc",
+            "partition": 0,
+            "offset": 2563,
+            "error": "ct_ais: invalid_mmsi"
+          },
+          {
+            "record_id": "v1:offline:REALTIME_TOPIC.jsonl:18f378701619c3002fb8989931b49775d19fb2a54d6668e1492ce4295b98dcdc:0:2687",
+            "topic": "offline:REALTIME_TOPIC.jsonl:18f378701619c3002fb8989931b49775d19fb2a54d6668e1492ce4295b98dcdc",
+            "partition": 0,
+            "offset": 2687,
+            "error": "ct_ais: invalid_mmsi"
+          },
+          {
+            "record_id": "v1:offline:REALTIME_TOPIC.jsonl:18f378701619c3002fb8989931b49775d19fb2a54d6668e1492ce4295b98dcdc:0:2811",
+            "topic": "offline:REALTIME_TOPIC.jsonl:18f378701619c3002fb8989931b49775d19fb2a54d6668e1492ce4295b98dcdc",
+            "partition": 0,
+            "offset": 2811,
+            "error": "ct_ais: invalid_mmsi"
+          }
+        ]
+      },
+      "quality_parity": "PASS",
+      "reference_business_parity": "PASS",
+      "records": 35944,
+      "statuses": {
+        "valid": 35892,
+        "invalid": 52
+      },
+      "ships": 196,
+      "semantic_sha256": "a8d66813d7ddcb72599e832563277e110e7be5e4ce00928a026844dfbc4dc6d3",
+      "raw_locations_errors_normalized_snapshots": "PASS",
+      "transport_metadata_parity": "PASS",
+      "transport_semantic_sha256": "9adf8838ea68869306f3bf6ff63f24c821c7141a746e5797eed507029c7d099e",
+      "excluded": "received_at differs by execution time; JSON object key order is irrelevant; no numeric tolerance used",
+      "full_replay_dedup": "PASS",
+      "databases": {
+        "python": "/tmp/ct-full-real-v1kp714l/REALTIME_TOPIC.sqlite3",
+        "rust": "/tmp/ct-full-real-v1kp714l/rust/REALTIME_TOPIC.sqlite3"
+      }
+    }
+  ]
+}

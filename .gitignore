@@ -1,0 +1,26 @@
+.runtime/
+var/
+data/archives/
+data/source/
+data/prepared/
+reports/**/*.log
+reports/**/profile-*.json
+reports/cleanup.json
+reports/dashboard/*.html
+reports/dashboard/*.jpg
+references/changtai-kafka-demo-v0.1.0/
+references/changtai-kafka-demo-v0.1.0.zip
+__pycache__/
+*.pyc
+.env
+config.local.toml
+
+# 本机会话、聊天导出及敏感状态，不加入项目提交
+/.codex/
+/.agents/
+/.aws/
+/.chatgpt/
+/.chat-history/
+/.aider.chat.history.md
+/.aider.input.history
+/rollout-*.jsonl

@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Bridge Kafka archive export record v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_id",
+    "topic",
+    "partition",
+    "offset",
+    "received_at",
+    "kafka_timestamp_ms",
+    "status",
+    "error",
+    "message",
+    "kafka_metadata_recorded",
+    "kafka_key_base64",
+    "kafka_headers"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "bridge-kafka.record.v1"
+    },
+    "record_id": {
+      "type": "string",
+      "pattern": "^v1:"
+    },
+    "topic": {
+      "type": "string"
+    },
+    "partition": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "offset": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "received_at": {
+      "type": "string"
+    },
+    "kafka_timestamp_ms": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "status": {
+      "enum": [
+        "valid",
+        "invalid"
+      ]
+    },
+    "error": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "message": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "kafka_metadata_recorded": {
+      "type": "boolean"
+    },
+    "kafka_key_base64": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "kafka_headers": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "object",
+        "required": [
+          "key",
+          "value_base64"
+        ],
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "value_base64": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "kafka_metadata_recorded": {
+            "const": false
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "kafka_headers": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "kafka_metadata_recorded": {
+            "const": true
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "kafka_headers": {
+            "type": "array"
+          }
+        }
+      }
+    }
+  ]
+}

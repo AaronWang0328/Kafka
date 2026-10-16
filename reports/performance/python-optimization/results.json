@@ -1,0 +1,51 @@
+{
+  "result": "PASS",
+  "kafka_report": "var/benchmarks/continuous-ais/20261016-190925/results.json",
+  "source_code_sha256": "39eaa8c4bcebac2bcf6b500bad449d023ffbc9c1ad7cb6efe14890ee3cdaea11",
+  "python_baseline_source_sha256": "5175e59ed97eebdbfb0e5b3a1badbd1e30c45a017bfc7696bb3e4e30f09c56c7",
+  "rust_binary_unchanged": true,
+  "changes": [
+    "strict recv shape validation + fromisoformat; timezone/pattern reuse; each timestamp formatted once",
+    "copy and validate stream input config once; public normalize still validates every call",
+    "in-place per-field selection; snapshot aggregate time finalized only for touched kinds at batch end",
+    "avoid eagerly constructing unused legacy field times; reuse JSON encoder and insert cursor",
+    "validate quality config once per dynamic batch; calculate only persisted gate rejection reasons"
+  ],
+  "unchanged": "one worker; 2048 rows/50ms; WAL+FULL; finite numeric validation; every raw/normalized/error row; persist then synchronous Kafka commit",
+  "validation": {
+    "python_and_cross_language_tests": 60,
+    "rust_tests": 2,
+    "full_fresh_records": 268761,
+    "invalid_records": 1236,
+    "full_reimport": "PASS",
+    "python_before_after": "full raw/status/error/normalized/snapshot equality",
+    "kafka_recovery_topics": 5,
+    "formal_four_rounds_three_way_parity": "PASS",
+    "excluded": "received_at execution time and JSON object key order only; no float tolerance"
+  },
+  "profiles": {
+    "before": "var/benchmarks/python-optimization/profile-before.json",
+    "after": "var/benchmarks/python-optimization/profile-after.json",
+    "note": "cProfile enabled; localization evidence, not the formal throughput score"
+  },
+  "channels": [
+    {
+      "topic": "ais_parsing_ori",
+      "python_before": 17649.937927322342,
+      "python_after": 22150.515532055688,
+      "rust": 41193.59557019436,
+      "python_throughput_gain": 1.2549911293323242,
+      "python_cpu_reduction": 0.2316496858965431,
+      "rust_over_python": 1.8597127236420294
+    },
+    {
+      "topic": "REALTIME_TOPIC",
+      "python_before": 17377.336103138863,
+      "python_after": 20332.82871294777,
+      "rust": 32193.115883361672,
+      "python_throughput_gain": 1.1700774268430623,
+      "python_cpu_reduction": 0.1951383779121807,
+      "rust_over_python": 1.5833072878276586
+    }
+  ]
+}

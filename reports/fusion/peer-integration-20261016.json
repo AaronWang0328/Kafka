@@ -1,0 +1,86 @@
+{
+  "result": "PASS",
+  "source_code_sha256": "9772cc0a1b289a7612b71e9bdd035c003f0e47c08a7ea8ba59c187708c7e6a13",
+  "performance_report": "reports/performance/continuous-ais/20261016-212630/results.json",
+  "input": "real bridge export records once per topic per round; entire JSONL+CSV extras for quality; no generated business data",
+  "adopted": [
+    "compact JSON for normalized records and ship state, preserving raw value bytes",
+    "versioned archive envelope and stable source record_id, not an invented upstream event ID",
+    "binary-preserving actual Kafka key/ordered headers capture; unknown historical/offline metadata remains null",
+    "same deterministic quality diagnostics and invalid source locations in Python and Rust"
+  ],
+  "excluded": [
+    "peer simulator and synthetic timestamp generation",
+    "unconfirmed changtai.* topics or DLQ topic",
+    "uncalibrated width*0.725 height model and default matching thresholds"
+  ],
+  "validation": {
+    "real_data_tests": 9,
+    "full_records": 268761,
+    "valid_records": 267525,
+    "invalid_records": 1236,
+    "before_after_business_parity": "PASS",
+    "python_rust_quality_parity": "PASS",
+    "full_reimport": "PASS",
+    "existing_libraries_migration": "PASS",
+    "five_topic_recovery_and_dedup": "PASS",
+    "actual_replay_keys_and_empty_headers": "PASS",
+    "transaction_rollback_python_rust": "PASS",
+    "contract_export_parity": "PASS",
+    "four_rounds_before_after_two_languages": "PASS"
+  },
+  "data_quality": {
+    "known_ais_time_observations": 231514,
+    "unknown_ais_time_observations": 36011,
+    "unconfirmed_coordinate_system_observations": 267525,
+    "missing_moulded_depth_observations": 267525
+  },
+  "conditions": "isolated Kafka 4.2.2; one broker/partition/replica; one worker; SQLite WAL+FULL; persist then sync offset commit",
+  "limits": [
+    "valid means protocol validation, not eligibility for fusion",
+    "production upstream Kafka value/key/headers and connection remain unconfirmed; projections were replayed locally",
+    "no non-empty original Kafka header sample supplied; actual replay MMSI keys and empty headers verified",
+    "database size figures apply to fresh local databases for this corpus; existing rows are not rewritten"
+  ],
+  "channels": [
+    {
+      "topic": "ais_parsing_ori",
+      "python": {
+        "before_messages_per_second": 22803.224601656697,
+        "after_messages_per_second": 24681.680746849965,
+        "throughput_gain_percent": 8.237677688166944,
+        "cpu_reduction_percent": 3.0179926794347667,
+        "new_database_reduction_percent": 30.65542778847321,
+        "normalized_json_reduction_percent": 6.323933272049431
+      },
+      "rust": {
+        "before_messages_per_second": 42710.17016384659,
+        "after_messages_per_second": 47759.09178974267,
+        "throughput_gain_percent": 11.821356849029607,
+        "cpu_reduction_percent": 5.669510028668068,
+        "new_database_reduction_percent": 30.655294867514492,
+        "normalized_json_reduction_percent": 6.323933272049431
+      }
+    },
+    {
+      "topic": "REALTIME_TOPIC",
+      "python": {
+        "before_messages_per_second": 20926.911847468247,
+        "after_messages_per_second": 22577.113636772556,
+        "throughput_gain_percent": 7.885548528766573,
+        "cpu_reduction_percent": 4.203753222561579,
+        "new_database_reduction_percent": 32.49756308892018,
+        "normalized_json_reduction_percent": 6.398142332151224
+      },
+      "rust": {
+        "before_messages_per_second": 32198.287935102115,
+        "after_messages_per_second": 37205.09317623623,
+        "throughput_gain_percent": 15.549911384188132,
+        "cpu_reduction_percent": 7.58853651704886,
+        "new_database_reduction_percent": 32.499390788725535,
+        "normalized_json_reduction_percent": 6.398142332151224
+      }
+    }
+  ],
+  "temporary_before_code_removed": true
+}

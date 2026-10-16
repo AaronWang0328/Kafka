@@ -1,0 +1,50 @@
+{
+  "result": "PASS",
+  "languages": [
+    "python",
+    "rust"
+  ],
+  "topics": [
+    "ABNORMAL_TOPIC",
+    "down_pic",
+    "down_pic_plus"
+  ],
+  "messages_per_language": 15,
+  "invalid": 0,
+  "transport_metadata_parity": "PASS",
+  "quality_parity": "PASS",
+  "quality": {
+    "schema_version": "bridge-kafka.quality.v1",
+    "records": 15,
+    "statuses": {
+      "valid": 15,
+      "invalid": 0
+    },
+    "ships": 5,
+    "transport_metadata_records": 15,
+    "ais_events": 5,
+    "media_commands": 10,
+    "known_ais_times": 0,
+    "unknown_ais_times": 5,
+    "unconfirmed_coordinate_system_events": 5,
+    "missing_fields": {
+      "ship_name": 0,
+      "length_m": 0,
+      "width_m": 0,
+      "moulded_depth_m": 5,
+      "longitude": 0,
+      "latitude": 0,
+      "sog_knots": 5,
+      "cog_deg": 5
+    },
+    "issues": {},
+    "position_gate_rejections": {},
+    "first_invalid_records": []
+  },
+  "raw_and_normalized_parity": "PASS",
+  "snapshot_parity": "PASS",
+  "offset_resume": "PASS",
+  "replay_dedup": "PASS",
+  "command_ais_isolation": "PASS",
+  "test_cluster": "isolated loopback, destroyed after test"
+}

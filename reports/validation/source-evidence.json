@@ -1,0 +1,101 @@
+{
+  "result": "PASS",
+  "checked_at": "2026-10-16T23:03:42+08:00",
+  "source_code_sha256": "9772cc0a1b289a7612b71e9bdd035c003f0e47c08a7ea8ba59c187708c7e6a13",
+  "scope": "read-only actual source bytes, prepared inputs, five configurations; no production connection or new Kafka performance test",
+  "source_hashes_and_prepared_manifest": "PASS",
+  "topics": [
+    {
+      "topic": "ais_parsing_ori",
+      "config": "configs/ais-origin.toml",
+      "evidence_kind": "supplier_vessel_projection_export",
+      "source_file": "data/source/ct_offline_ais_supplement_20261015/ais_window_bridge.jsonl",
+      "source_rows": 232698,
+      "real_invalid_mmsi_rows": 1184,
+      "prepared_sha256": "5e1af1f22143af8b01e389b808579a4584266c8123f2dfff6b7eea0a8ddfe9ae",
+      "original_row_bytes_and_order": "PASS",
+      "original_production_value_key_headers": "not supplied",
+      "coordinate_system": "unknown",
+      "project_matching_gates": "unconfigured; not confirmed"
+    },
+    {
+      "topic": "REALTIME_TOPIC",
+      "config": "configs/ais-platform.toml",
+      "evidence_kind": "supplier_vessel_projection_export",
+      "source_file": "data/source/ct_offline_ais_supplement_20261015/ais_window_bridge.jsonl",
+      "source_rows": 35917,
+      "real_invalid_mmsi_rows": 52,
+      "prepared_sha256": "18f378701619c3002fb8989931b49775d19fb2a54d6668e1492ce4295b98dcdc",
+      "original_row_bytes_and_order": "PASS",
+      "original_production_value_key_headers": "not supplied",
+      "coordinate_system": "unknown",
+      "project_matching_gates": "unconfigured; not confirmed"
+    },
+    {
+      "topic": "ABNORMAL_TOPIC",
+      "config": "configs/alarm.toml",
+      "evidence_kind": "supplier_raw_kafka_capture",
+      "source_file": "data/source/ct_offline_batch2_20261015/pkg2/01_alarm/real_alarm_raw.jsonl",
+      "source_rows": 5,
+      "source_sha256": "8d700410e185d79ba2f84f0630dd2678ac43df5d5e74e107b1a5716cfe3e5489",
+      "shared_capture_fields": [
+        "kafka_ts",
+        "offset",
+        "partition",
+        "recv",
+        "topic",
+        "value"
+      ],
+      "original_keys_present": 0,
+      "original_headers_present": 0,
+      "upstream_connection_verified": false
+    },
+    {
+      "topic": "down_pic",
+      "config": "configs/media.toml",
+      "evidence_kind": "supplier_raw_kafka_capture",
+      "source_file": "data/source/ct_offline_batch2_20261015/pkg2/01_alarm/down_pic.jsonl",
+      "source_rows": 5,
+      "source_sha256": "9a7e55d43728349fbea053a9614bb0be3cacf3d02518e53021872cee5eaa06cd",
+      "shared_capture_fields": [
+        "kafka_ts",
+        "offset",
+        "partition",
+        "recv",
+        "topic",
+        "value"
+      ],
+      "original_keys_present": 0,
+      "original_headers_present": 0,
+      "upstream_connection_verified": false
+    },
+    {
+      "topic": "down_pic_plus",
+      "config": "configs/media-plus.toml",
+      "evidence_kind": "supplier_raw_kafka_capture",
+      "source_file": "data/source/ct_offline_batch2_20261015/pkg2/01_alarm/down_pic_plus.jsonl",
+      "source_rows": 5,
+      "source_sha256": "6f5fb64d2425bf73d0e42f55edfc84734d93c44437b0aca1a2435377a861a6ea",
+      "shared_capture_fields": [
+        "kafka_ts",
+        "offset",
+        "partition",
+        "recv",
+        "topic",
+        "value"
+      ],
+      "original_keys_present": 0,
+      "original_headers_present": 0,
+      "upstream_connection_verified": false
+    }
+  ],
+  "rules": [
+    "only supplier-backed topic names and protocols",
+    "no generated business values or synthetic acquisition time",
+    "preserve original rows and real invalid records",
+    "unknown fields and unconfirmed meanings remain unknown"
+  ],
+  "business_code_changed": false,
+  "full_parity_report": "reports/validation/ais-offline-parity.json",
+  "live_upstream_verified": false
+}

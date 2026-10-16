@@ -1,0 +1,138 @@
+{
+  "generated_at": "2026-10-16T23:16:04+08:00",
+  "source_code_sha256": "9772cc0a1b289a7612b71e9bdd035c003f0e47c08a7ea8ba59c187708c7e6a13",
+  "requirements_sha256": "305d9a5090601536b5fe0998dd200b4af11a1d4586bde89c6a51316461973ade",
+  "current_databases_result": "PASS",
+  "channels": [
+    {
+      "topic": "ais_parsing_ori",
+      "python_database": "var/ais_parsing_ori.sqlite3",
+      "rust_database": "var/rust/ais_parsing_ori.sqlite3",
+      "parity": {
+        "result": "PASS",
+        "records": 232817,
+        "statuses": {
+          "valid": 231633,
+          "invalid": 1184
+        },
+        "ships": 247,
+        "semantic_sha256": "f9dbdb2bbaf4e6e8f6f13004ca19e4650b1316ef5ca25300f9018b347fb827a0",
+        "raw_locations_errors_normalized_snapshots": "PASS",
+        "transport_metadata_parity": "PASS",
+        "transport_semantic_sha256": "ff7370ebbca60213213be4206d4a9274fae14d85cfe75bf07dc9e0c369c8f5b5",
+        "excluded": "received_at differs by execution time; JSON object key order is irrelevant; no numeric tolerance used"
+      },
+      "matches_full_report": true
+    },
+    {
+      "topic": "REALTIME_TOPIC",
+      "python_database": "var/REALTIME_TOPIC.sqlite3",
+      "rust_database": "var/rust/REALTIME_TOPIC.sqlite3",
+      "parity": {
+        "result": "PASS",
+        "records": 35944,
+        "statuses": {
+          "valid": 35892,
+          "invalid": 52
+        },
+        "ships": 196,
+        "semantic_sha256": "a8d66813d7ddcb72599e832563277e110e7be5e4ce00928a026844dfbc4dc6d3",
+        "raw_locations_errors_normalized_snapshots": "PASS",
+        "transport_metadata_parity": "PASS",
+        "transport_semantic_sha256": "9adf8838ea68869306f3bf6ff63f24c821c7141a746e5797eed507029c7d099e",
+        "excluded": "received_at differs by execution time; JSON object key order is irrelevant; no numeric tolerance used"
+      },
+      "matches_full_report": true
+    },
+    {
+      "topic": "ABNORMAL_TOPIC",
+      "python_database": "var/ABNORMAL_TOPIC.sqlite3",
+      "rust_database": "var/rust/ABNORMAL_TOPIC.sqlite3",
+      "parity": {
+        "result": "PASS",
+        "records": 5,
+        "statuses": {
+          "valid": 5,
+          "invalid": 0
+        },
+        "ships": 5,
+        "semantic_sha256": "befcc5bbec8bdedb9a119c1ea91798f7c7a51425457d2b6b151a444b4fe88f82",
+        "raw_locations_errors_normalized_snapshots": "PASS",
+        "transport_metadata_parity": "PASS",
+        "transport_semantic_sha256": "1c4591a8bc1566eb4562249772e0e2ff89103406e1f0ebe97a7c293ab6c22cd8",
+        "excluded": "received_at differs by execution time; JSON object key order is irrelevant; no numeric tolerance used"
+      }
+    },
+    {
+      "topic": "down_pic",
+      "python_database": "var/down_pic.sqlite3",
+      "rust_database": "var/rust/down_pic.sqlite3",
+      "parity": {
+        "result": "PASS",
+        "records": 5,
+        "statuses": {
+          "valid": 5,
+          "invalid": 0
+        },
+        "ships": 0,
+        "semantic_sha256": "dc25b39de9a659785863894e49707b6636cfa91d7fba463466203682dc5968bf",
+        "raw_locations_errors_normalized_snapshots": "PASS",
+        "transport_metadata_parity": "PASS",
+        "transport_semantic_sha256": "c3b8d3061a9978fc97eab9f7cc37b8453a1e7ad86613a9399c98df4129b4c5ff",
+        "excluded": "received_at differs by execution time; JSON object key order is irrelevant; no numeric tolerance used"
+      }
+    },
+    {
+      "topic": "down_pic_plus",
+      "python_database": "var/down_pic_plus.sqlite3",
+      "rust_database": "var/rust/down_pic_plus.sqlite3",
+      "parity": {
+        "result": "PASS",
+        "records": 5,
+        "statuses": {
+          "valid": 5,
+          "invalid": 0
+        },
+        "ships": 0,
+        "semantic_sha256": "f585327293b50725596854a35411275bcdff14c7bf57b02452f4108744de2c4d",
+        "raw_locations_errors_normalized_snapshots": "PASS",
+        "transport_metadata_parity": "PASS",
+        "transport_semantic_sha256": "d778ed7772164a65666218368f42585836924393dbea96dfb88f662f2b484a54",
+        "excluded": "received_at differs by execution time; JSON object key order is irrelevant; no numeric tolerance used"
+      }
+    }
+  ],
+  "reports": [
+    {
+      "path": "reports/validation/ais-offline-parity.json",
+      "sha256": "c89e4056f55655ffc4bfadf917c898c76abfa5040a87c6f76bf877420565740b",
+      "modified": "2026-10-16T21:25:41+08:00",
+      "code_matches": true
+    },
+    {
+      "path": "reports/validation/ais-kafka-parity.json",
+      "sha256": "6ef07b0ca031d8816f6b63e20b4bc44efa8abc0cb1e4294cc01a15c57cdb10e5",
+      "modified": "2026-10-16T21:31:06+08:00",
+      "code_matches": null
+    },
+    {
+      "path": "reports/validation/site-protocols-integration.json",
+      "sha256": "802794f607f8b5e673724ba3dd76a6992b00e32a94ff56cd2999410dbc437d79",
+      "modified": "2026-10-16T21:26:41+08:00",
+      "code_matches": null
+    },
+    {
+      "path": "reports/fusion/peer-integration-20261016.json",
+      "sha256": "f98b6b7be646da285cdb87734be0e201ece193b3b1c6f6ef35d823f0290f298e",
+      "modified": "2026-10-16T21:36:57+08:00",
+      "code_matches": true
+    },
+    {
+      "path": "reports/performance/continuous-ais/20261016-212630/results.json",
+      "sha256": "b0e2e84c56d930daba2eb5c7b90cfb6e91e3947dd17c95996f75619bf805b929",
+      "modified": "2026-10-16T21:30:53+08:00",
+      "code_matches": true
+    }
+  ],
+  "scope": "read-only current database comparison; real first/last observations only, not live upstream or fusion output"
+}

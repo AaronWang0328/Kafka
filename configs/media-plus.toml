@@ -1,0 +1,18 @@
+# down_pic_plus 原始指令协议；Topic 名取自原始消费留档。
+# 原始 RTSP 凭证仅留在原文；校验、检查和事件导出使用去凭证地址。
+[kafka]
+bootstrap_servers = "127.0.0.1:9092"
+topic = "down_pic_plus"
+group_id = "down-pic-plus-ingest-v1"
+security_protocol = "PLAINTEXT"
+auto_offset_reset = "earliest"
+
+[storage]
+database = "var/down_pic_plus.sqlite3"
+
+[input]
+profile = "ct_down_pic_plus"
+
+[processing]
+batch_size = 2048
+batch_max_wait_ms = 50

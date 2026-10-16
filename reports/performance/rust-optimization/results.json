@@ -1,0 +1,54 @@
+{
+  "result": "PASS",
+  "source_code_sha256": "09db94d33b48e4f0b63f234bdfe6a5148faae59c4d9613eb834f37bd07b93f6e",
+  "python_application_unchanged": true,
+  "baseline_binary_sha256": "9a9a927acb5861581d8a65445633dfe1c65740a35826c4ee8a86589502abfa06",
+  "optimized_binary_sha256": "ea05589fc8374ea3bc8a3f41421680c9bd3ca38bd79d419dc08160596ce9e0ce",
+  "kafka_report": "var/benchmarks/continuous-ais/20261016-184921/results.json",
+  "fresh_full_parity_report": "var/ais-offline-parity.json",
+  "profile_before": "var/benchmarks/rust-optimization/profile-before.json",
+  "profile_after": "var/benchmarks/rust-optimization/profile-after.json",
+  "profile_note": "instrumented, explanatory timings only; final four-round Kafka test uses normal release without profile feature",
+  "snapshot_merge_and_write_seconds_before": 4.574412089,
+  "snapshot_merge_and_write_seconds_after": 0.595953359,
+  "changes": [
+    "per-field borrowed update selection, materialize final snapshots once per batch",
+    "reuse JSON/Base64 buffers",
+    "hold prepared statements for batch"
+  ],
+  "unchanged": [
+    "all raw and normalized records",
+    "field time/provenance/null/order semantics",
+    "WAL+FULL",
+    "2048 messages / 50ms",
+    "durable save before offset commit",
+    "one application worker"
+  ],
+  "validation": {
+    "python_and_cross_language_unit_tests": 55,
+    "rust_unit_tests": 2,
+    "fresh_full_records": 268761,
+    "full_replay_dedup": "PASS",
+    "all_five_kafka_protocols_and_resume": "PASS"
+  },
+  "gains": [
+    {
+      "topic": "ais_parsing_ori",
+      "rust_before": 20002.08606789749,
+      "rust_after": 40147.918081129275,
+      "python": 17785.57474660768,
+      "rust_speedup": 2.007186547685394,
+      "rust_over_python": 2.2573303732445793,
+      "client_cpu_reduction_fraction": 0.5788700731343739
+    },
+    {
+      "topic": "REALTIME_TOPIC",
+      "rust_before": 18261.961634354353,
+      "rust_after": 31505.641111955796,
+      "python": 17170.63947143197,
+      "rust_speedup": 1.7252057442004187,
+      "rust_over_python": 1.8348554324009891,
+      "client_cpu_reduction_fraction": 0.5531038554723777
+    }
+  ]
+}

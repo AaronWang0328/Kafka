@@ -1,0 +1,477 @@
+{
+  "before_source_code_sha256": "697cb5f923c4230116c886050cde2e71a0666c3fbff5c44caf24ed800174f34f",
+  "before_rust_binary_sha256": "5c38a4e19b9d5f4138f01415041e4c7028e160c5d425bf37f4933ae3c5be026d",
+  "replay_keys": "valid source MMSI as UTF8, invalid rows have null key; local replay keys, not claimed original upstream keys",
+  "result": "PASS",
+  "date_CN": "20261016-212630",
+  "source_code_sha256": "9772cc0a1b289a7612b71e9bdd035c003f0e47c08a7ea8ba59c187708c7e6a13",
+  "native_versions": {
+    "librdkafka": "2.16.0",
+    "sqlite": "3.54.0"
+  },
+  "rust_binary_sha256": "e528fd23e76c4c713832c34b832ac584b2aa8afe725043eb508821ea3601d688",
+  "rounds": 4,
+  "warmup_messages_per_language": 5000,
+  "batch_size": 2048,
+  "batch_max_wait_ms": 50,
+  "input": "all actual bridge export rows once per run, including actual invalid rows; no generated business values",
+  "conditions": "isolated Kafka 4.2.2; one broker/partition/replica; one worker; SQLite WAL+FULL; persist then sync offset commit",
+  "timing": "process start to exit; producer seeding and parent verification excluded",
+  "limits": "vessel projections, not original production Kafka value; local backlog replay, not production latency or broker capacity",
+  "channels": [
+    {
+      "topic": "ais_parsing_ori",
+      "messages_per_run": 232698,
+      "input_sha256": "5e1af1f22143af8b01e389b808579a4584266c8123f2dfff6b7eea0a8ddfe9ae",
+      "source": "data/prepared/ais-supplement/ais_parsing_ori.jsonl",
+      "summary": {
+        "python-before": {
+          "messages_per_second": 22803.224601656697,
+          "active_messages_per_second": 23468.454272459006,
+          "client_cpu_seconds": 8.725965500000004,
+          "database_bytes": 472326144.0,
+          "normalized_json_bytes": 218643610.0
+        },
+        "python": {
+          "messages_per_second": 24681.680746849965,
+          "active_messages_per_second": 25337.54518183808,
+          "client_cpu_seconds": 8.462616500000001,
+          "database_bytes": 327532544.0,
+          "normalized_json_bytes": 204816734.0
+        },
+        "rust-before": {
+          "messages_per_second": 42710.17016384659,
+          "active_messages_per_second": 45434.879308099305,
+          "client_cpu_seconds": 4.035480999999995,
+          "database_bytes": 472328192.0,
+          "normalized_json_bytes": 218643610.0
+        },
+        "rust": {
+          "messages_per_second": 47759.09178974267,
+          "active_messages_per_second": 51039.54231883632,
+          "client_cpu_seconds": 3.8066890000000013,
+          "database_bytes": 327534592.0,
+          "normalized_json_bytes": 204816734.0
+        }
+      },
+      "runs": [
+        {
+          "database_bytes": 472330240,
+          "normalized_json_bytes": 218643610,
+          "language": "python-before",
+          "label": "round-1",
+          "seconds": 9.976550926000073,
+          "messages_per_second": 23324.49377806126,
+          "active_seconds": 9.718011486000023,
+          "active_messages_per_second": 23945.02212054696,
+          "client_cpu_seconds": 8.696477
+        },
+        {
+          "database_bytes": 327532544,
+          "normalized_json_bytes": 204816734,
+          "language": "python",
+          "label": "round-1",
+          "seconds": 9.32911576000015,
+          "messages_per_second": 24943.199975899566,
+          "active_seconds": 9.08330583499992,
+          "active_messages_per_second": 25618.20599537284,
+          "client_cpu_seconds": 8.345080000000001
+        },
+        {
+          "database_bytes": 472326144,
+          "normalized_json_bytes": 218643610,
+          "language": "rust-before",
+          "label": "round-1",
+          "seconds": 5.473481234000019,
+          "messages_per_second": 42513.71111944863,
+          "active_seconds": 5.166703275,
+          "active_messages_per_second": 45038.003464598034,
+          "client_cpu_seconds": 4.028645999999998
+        },
+        {
+          "database_bytes": 327536640,
+          "normalized_json_bytes": 204816734,
+          "language": "rust",
+          "label": "round-1",
+          "seconds": 4.872407449000093,
+          "messages_per_second": 47758.32120685102,
+          "active_seconds": 4.545558369,
+          "active_messages_per_second": 51192.39070538927,
+          "client_cpu_seconds": 3.7932879999999978
+        },
+        {
+          "database_bytes": 327528448,
+          "normalized_json_bytes": 204816734,
+          "language": "python",
+          "label": "round-2",
+          "seconds": 9.478768605999903,
+          "messages_per_second": 24549.391347385146,
+          "active_seconds": 9.236965590999944,
+          "active_messages_per_second": 25192.039280381185,
+          "client_cpu_seconds": 8.488811000000004
+        },
+        {
+          "database_bytes": 327532544,
+          "normalized_json_bytes": 204816734,
+          "language": "rust",
+          "label": "round-2",
+          "seconds": 4.8722502210000584,
+          "messages_per_second": 47759.86237263433,
+          "active_seconds": 4.548561709,
+          "active_messages_per_second": 51158.589217240406,
+          "client_cpu_seconds": 3.8093280000000043
+        },
+        {
+          "database_bytes": 472326144,
+          "normalized_json_bytes": 218643610,
+          "language": "python-before",
+          "label": "round-2",
+          "seconds": 10.17993366199994,
+          "messages_per_second": 22858.498662778555,
+          "active_seconds": 9.886819875000128,
+          "active_messages_per_second": 23536.182811259823,
+          "client_cpu_seconds": 8.694239000000005
+        },
+        {
+          "database_bytes": 472326144,
+          "normalized_json_bytes": 218643610,
+          "language": "rust-before",
+          "label": "round-2",
+          "seconds": 5.423357748999933,
+          "messages_per_second": 42906.62920824456,
+          "active_seconds": 5.077222097,
+          "active_messages_per_second": 45831.75515160057,
+          "client_cpu_seconds": 3.979762999999994
+        },
+        {
+          "database_bytes": 327540736,
+          "normalized_json_bytes": 204816734,
+          "language": "rust",
+          "label": "round-3",
+          "seconds": 5.072569493000174,
+          "messages_per_second": 45873.79242829666,
+          "active_seconds": 4.723096326,
+          "active_messages_per_second": 49268.10379009831,
+          "client_cpu_seconds": 3.9038890000000066
+        },
+        {
+          "database_bytes": 472330240,
+          "normalized_json_bytes": 218643610,
+          "language": "rust-before",
+          "label": "round-3",
+          "seconds": 5.372986714999797,
+          "messages_per_second": 43308.87313575068,
+          "active_seconds": 5.076692249,
+          "active_messages_per_second": 45836.53855437791,
+          "client_cpu_seconds": 4.0423159999999925
+        },
+        {
+          "database_bytes": 327532544,
+          "normalized_json_bytes": 204816734,
+          "language": "python",
+          "label": "round-3",
+          "seconds": 9.377701295999941,
+          "messages_per_second": 24813.970146314783,
+          "active_seconds": 9.131481125999926,
+          "active_messages_per_second": 25483.051083294973,
+          "client_cpu_seconds": 8.436421999999999
+        },
+        {
+          "database_bytes": 472317952,
+          "normalized_json_bytes": 218643610,
+          "language": "python-before",
+          "label": "round-3",
+          "seconds": 10.230254847999731,
+          "messages_per_second": 22746.060920026663,
+          "active_seconds": 9.944050567000204,
+          "active_messages_per_second": 23400.72573365819,
+          "client_cpu_seconds": 8.75545400000001
+        },
+        {
+          "database_bytes": 472330240,
+          "normalized_json_bytes": 218643610,
+          "language": "rust-before",
+          "label": "round-4",
+          "seconds": 5.52343011999983,
+          "messages_per_second": 42129.25572415989,
+          "active_seconds": 5.201649758,
+          "active_messages_per_second": 44735.42257283213,
+          "client_cpu_seconds": 4.096219999999992
+        },
+        {
+          "database_bytes": 472326144,
+          "normalized_json_bytes": 218643610,
+          "language": "python-before",
+          "label": "round-4",
+          "seconds": 10.229405043999577,
+          "messages_per_second": 22747.95054053484,
+          "active_seconds": 9.960589765999885,
+          "active_messages_per_second": 23361.86967505742,
+          "client_cpu_seconds": 8.840183999999995
+        },
+        {
+          "database_bytes": 327532544,
+          "normalized_json_bytes": 204816734,
+          "language": "rust",
+          "label": "round-4",
+          "seconds": 4.8718639200001235,
+          "messages_per_second": 47763.64935907202,
+          "active_seconds": 4.569829851,
+          "active_messages_per_second": 50920.495420432235,
+          "client_cpu_seconds": 3.8040499999999984
+        },
+        {
+          "database_bytes": 327532544,
+          "normalized_json_bytes": 204816734,
+          "language": "python",
+          "label": "round-4",
+          "seconds": 9.528433706000214,
+          "messages_per_second": 24421.432438939693,
+          "active_seconds": 9.250770566000028,
+          "active_messages_per_second": 25154.445063771273,
+          "client_cpu_seconds": 8.502643000000008
+        }
+      ],
+      "parity": {
+        "records": 232698,
+        "statuses": {
+          "valid": 231514,
+          "invalid": 1184
+        },
+        "ships": 247,
+        "semantic_sha256": "73f355e71e5a9605ef05b57bbe201ae893d3afe2760eb5e07c1ba4d80728449d",
+        "raw_locations_errors_normalized_snapshots": "PASS",
+        "transport_metadata_parity": "PASS",
+        "transport_semantic_sha256": "7dbf07668a71a791cc9c3b4f8cc69d20b0c19e9b33d776feed89a83e1710a631",
+        "excluded": "received_at differs by execution time; JSON object key order is irrelevant; no numeric tolerance used"
+      }
+    },
+    {
+      "topic": "REALTIME_TOPIC",
+      "messages_per_run": 35917,
+      "input_sha256": "18f378701619c3002fb8989931b49775d19fb2a54d6668e1492ce4295b98dcdc",
+      "source": "data/prepared/ais-supplement/REALTIME_TOPIC.jsonl",
+      "summary": {
+        "python-before": {
+          "messages_per_second": 20926.911847468247,
+          "active_messages_per_second": 24572.3866432082,
+          "client_cpu_seconds": 1.3337604999999968,
+          "database_bytes": 75636736.0,
+          "normalized_json_bytes": 34212790.0
+        },
+        "python": {
+          "messages_per_second": 22577.113636772556,
+          "active_messages_per_second": 26928.88917906826,
+          "client_cpu_seconds": 1.2776924999999935,
+          "database_bytes": 51056640.0,
+          "normalized_json_bytes": 32023807.0
+        },
+        "rust-before": {
+          "messages_per_second": 32198.287935102115,
+          "active_messages_per_second": 45694.920158798894,
+          "client_cpu_seconds": 0.6265635000000049,
+          "database_bytes": 75638784.0,
+          "normalized_json_bytes": 34212790.0
+        },
+        "rust": {
+          "messages_per_second": 37205.09317623623,
+          "active_messages_per_second": 53538.35821058369,
+          "client_cpu_seconds": 0.5790165000000052,
+          "database_bytes": 51056640.0,
+          "normalized_json_bytes": 32023807.0
+        }
+      },
+      "runs": [
+        {
+          "database_bytes": 75636736,
+          "normalized_json_bytes": 34212790,
+          "language": "python-before",
+          "label": "round-1",
+          "seconds": 1.7664016680000714,
+          "messages_per_second": 20333.42735724735,
+          "active_seconds": 1.477012545999969,
+          "active_messages_per_second": 24317.32898767182,
+          "client_cpu_seconds": 1.4038540000000008
+        },
+        {
+          "database_bytes": 51056640,
+          "normalized_json_bytes": 32023807,
+          "language": "python",
+          "label": "round-1",
+          "seconds": 1.5661217340002622,
+          "messages_per_second": 22933.721702628503,
+          "active_seconds": 1.3119409020000603,
+          "active_messages_per_second": 27376.995370175864,
+          "client_cpu_seconds": 1.259785999999993
+        },
+        {
+          "database_bytes": 75640832,
+          "normalized_json_bytes": 34212790,
+          "language": "rust-before",
+          "label": "round-1",
+          "seconds": 1.1155148369998642,
+          "messages_per_second": 32197.68918233077,
+          "active_seconds": 0.785759516,
+          "active_messages_per_second": 45709.91412593977,
+          "client_cpu_seconds": 0.6204700000000045
+        },
+        {
+          "database_bytes": 51056640,
+          "normalized_json_bytes": 32023807,
+          "language": "rust",
+          "label": "round-1",
+          "seconds": 1.0154381480001575,
+          "messages_per_second": 35370.93822084221,
+          "active_seconds": 0.69513502,
+          "active_messages_per_second": 51669.098760122884,
+          "client_cpu_seconds": 0.599123999999998
+        },
+        {
+          "database_bytes": 51056640,
+          "normalized_json_bytes": 32023807,
+          "language": "python",
+          "label": "round-2",
+          "seconds": 1.6163898649997464,
+          "messages_per_second": 22220.505570916604,
+          "active_seconds": 1.3337308619998112,
+          "active_messages_per_second": 26929.720997942302,
+          "client_cpu_seconds": 1.286448999999994
+        },
+        {
+          "database_bytes": 51056640,
+          "normalized_json_bytes": 32023807,
+          "language": "rust",
+          "label": "round-2",
+          "seconds": 0.9653826680000748,
+          "messages_per_second": 37204.93560797719,
+          "active_seconds": 0.672218108,
+          "active_messages_per_second": 53430.57494666597,
+          "client_cpu_seconds": 0.5783210000000096
+        },
+        {
+          "database_bytes": 75636736,
+          "normalized_json_bytes": 34212790,
+          "language": "python-before",
+          "label": "round-2",
+          "seconds": 1.666345972000272,
+          "messages_per_second": 21554.347418552847,
+          "active_seconds": 1.4262856259997534,
+          "active_messages_per_second": 25182.193065168147,
+          "client_cpu_seconds": 1.3202259999999946
+        },
+        {
+          "database_bytes": 75636736,
+          "normalized_json_bytes": 34212790,
+          "language": "rust-before",
+          "label": "round-2",
+          "seconds": 1.0655067009997765,
+          "messages_per_second": 33708.8447837059,
+          "active_seconds": 0.753628602,
+          "active_messages_per_second": 47658.75380085428,
+          "client_cpu_seconds": 0.6016809999999957
+        },
+        {
+          "database_bytes": 51056640,
+          "normalized_json_bytes": 32023807,
+          "language": "rust",
+          "label": "round-3",
+          "seconds": 0.9653744910001478,
+          "messages_per_second": 37205.25074449528,
+          "active_seconds": 0.669516931,
+          "active_messages_per_second": 53646.14147450141,
+          "client_cpu_seconds": 0.5797120000000007
+        },
+        {
+          "database_bytes": 75640832,
+          "normalized_json_bytes": 34212790,
+          "language": "rust-before",
+          "label": "round-3",
+          "seconds": 1.1154733500002294,
+          "messages_per_second": 32198.88668787346,
+          "active_seconds": 0.786275351,
+          "active_messages_per_second": 45679.926191658014,
+          "client_cpu_seconds": 0.6326570000000054
+        },
+        {
+          "database_bytes": 51056640,
+          "normalized_json_bytes": 32023807,
+          "language": "python",
+          "label": "round-3",
+          "seconds": 1.6165038209996965,
+          "messages_per_second": 22218.93912863615,
+          "active_seconds": 1.333993943999758,
+          "active_messages_per_second": 26924.41008563268,
+          "client_cpu_seconds": 1.2743419999999936
+        },
+        {
+          "database_bytes": 75632640,
+          "normalized_json_bytes": 34212790,
+          "language": "python-before",
+          "label": "round-3",
+          "seconds": 1.716332599999987,
+          "messages_per_second": 20926.59662818283,
+          "active_seconds": 1.4706877240000722,
+          "active_messages_per_second": 24421.90780127722,
+          "client_cpu_seconds": 1.3396179999999944
+        },
+        {
+          "database_bytes": 75636736,
+          "normalized_json_bytes": 34212790,
+          "language": "rust-before",
+          "label": "round-4",
+          "seconds": 1.115524657000151,
+          "messages_per_second": 32197.40574501272,
+          "active_seconds": 0.819226235,
+          "active_messages_per_second": 43842.59007525558,
+          "client_cpu_seconds": 0.6663660000000071
+        },
+        {
+          "database_bytes": 75640832,
+          "normalized_json_bytes": 34212790,
+          "language": "python-before",
+          "label": "round-4",
+          "seconds": 1.7162808950001818,
+          "messages_per_second": 20927.22706675366,
+          "active_seconds": 1.4527846709997903,
+          "active_messages_per_second": 24722.865485139184,
+          "client_cpu_seconds": 1.3279029999999992
+        },
+        {
+          "database_bytes": 51056640,
+          "normalized_json_bytes": 32023807,
+          "language": "rust",
+          "label": "round-4",
+          "seconds": 0.9653176970000459,
+          "messages_per_second": 37207.439697439106,
+          "active_seconds": 0.664608856,
+          "active_messages_per_second": 54042.31327305696,
+          "client_cpu_seconds": 0.5652539999999924
+        },
+        {
+          "database_bytes": 51056640,
+          "normalized_json_bytes": 32023807,
+          "language": "python",
+          "label": "round-4",
+          "seconds": 1.5660472069998832,
+          "messages_per_second": 22934.813101073192,
+          "active_seconds": 1.3338132610001594,
+          "active_messages_per_second": 26928.057360194223,
+          "client_cpu_seconds": 1.2810429999999933
+        }
+      ],
+      "parity": {
+        "records": 35917,
+        "statuses": {
+          "valid": 35865,
+          "invalid": 52
+        },
+        "ships": 196,
+        "semantic_sha256": "4f89a9f1f21b957c97ed9f852a2f4e6ec1e705c1283c5fa131004c7bef5c949b",
+        "raw_locations_errors_normalized_snapshots": "PASS",
+        "transport_metadata_parity": "PASS",
+        "transport_semantic_sha256": "202e6fe2e230bf95a6511fcf02d94890c5a5906d667a78906ac75486e4c98657",
+        "excluded": "received_at differs by execution time; JSON object key order is irrelevant; no numeric tolerance used"
+      }
+    }
+  ]
+}

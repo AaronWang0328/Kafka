@@ -1,0 +1,27 @@
+# 连续 AIS 来源，字段依据补充包逐船导出；现网 value 结构仍需单独确认。
+[kafka]
+bootstrap_servers = "127.0.0.1:9092"
+topic = "REALTIME_TOPIC"
+group_id = "ais-platform-ingest-v1"
+security_protocol = "PLAINTEXT"
+auto_offset_reset = "earliest"
+
+[storage]
+database = "var/REALTIME_TOPIC.sqlite3"
+
+[input]
+profile = "ct_ais"
+source_topic = "REALTIME_TOPIC"
+speed_unit = "knots"
+dimension_unit = "m"
+course_unit = "degrees"
+coordinate_system = "unknown"
+
+[quality]
+# 裁剪范围不冒充项目匹配门限；需现场确认后设置。
+max_position_age_seconds = 0
+max_future_skew_seconds = 0
+
+[processing]
+batch_size = 2048
+batch_max_wait_ms = 50

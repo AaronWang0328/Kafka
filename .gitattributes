@@ -1,0 +1,3 @@
+* text=auto eol=lf
+# 供应商原始需求保留交付字节，便于原件哈希核对。
+docs/requirements/*.html -text
